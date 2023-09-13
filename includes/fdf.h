@@ -6,7 +6,7 @@
 /*   By: hchauvin <hchauvin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 14:18:10 by hchauvin          #+#    #+#             */
-/*   Updated: 2023/09/13 13:42:58 by hchauvin         ###   ########.fr       */
+/*   Updated: 2023/09/13 15:20:21 by hchauvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,13 @@ typedef struct s_fdf
 	char	*map;
     int	m_width;
     int	m_height;
-    t_pt	**z_matrix;
     int	zoom;
     int	shift_x;
     int	shift_y;
     void    *mlx_ptr;
     void    *win_ptr;
 	void	*image;
+    t_pt	**z_matrix;
 }   t_fdf;
 
 typedef struct s_pt
