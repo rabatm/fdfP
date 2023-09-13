@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fdf.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hchauvin <hchauvin@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mrabat <mrabat@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 14:18:10 by hchauvin          #+#    #+#             */
-/*   Updated: 2023/09/13 15:20:21 by hchauvin         ###   ########.fr       */
+/*   Updated: 2023/09/13 19:43:52 by mrabat           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,8 @@ t_fdf   *ft_init_struct(char *map_file_name);
 void	ft_get_map(t_fdf *data, char *mapfile);
 int		handle_inputs(int key, t_fdf *data);
 void	print_matrix(t_fdf *data);
-
+void ft_zerostruc(t_fdf *data);
+int	ft_countword(char *line);
+t_fdf	*ft_destroy_struct(t_fdf *data);
+void	*ft_init_matrix(t_fdf *data);
 #endif

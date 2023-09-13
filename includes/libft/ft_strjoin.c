@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hchauvin <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mrabat <mrabat@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/15 10:39:09 by hchauvin          #+#    #+#             */
-/*   Updated: 2023/08/10 11:27:17 by hchauvin         ###   ########.fr       */
+/*   Created: 2023/02/10 16:35:24 by mrabat            #+#    #+#             */
+/*   Updated: 2023/09/13 17:22:04 by mrabat           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,18 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*s3;
-	size_t	lens1;
-	size_t	lens2;
+	size_t	len_s1;
+	size_t	len_s2;
+	char	*ptr;
 
-	lens1 = ft_strlen(s1);
-	lens2 = ft_strlen(s2);
-	if (!s1 && !s2)
+	if (!(s1) || !(s2))
 		return (NULL);
-	if (!s1)
-		return (ft_strdup(s2));
-	if (!s2)
-		return (ft_strdup(s1));
-	s3 = malloc(sizeof(char) * (lens1 + lens2 + 1));
-	if (!s3)
+	len_s1 = ft_strlen(s1);
+	len_s2 = ft_strlen(s2);
+	ptr = (char *)malloc(sizeof(*ptr) * ((len_s2 + len_s1) + 1));
+	if (!(ptr))
 		return (NULL);
-	ft_strlcpy(s3, s1, lens1 + 1);
-	ft_strlcat(s3, s2, lens1 + lens2 + 1);
-	return (s3);
+	ft_memcpy(ptr, s1, len_s1);
+	ft_memcpy(ptr + len_s1, s2, len_s2 + 1);
+	return ((char *)ptr);
 }
